@@ -1,0 +1,95 @@
+.account-grid {
+    background-color: #fff;
+    margin: 16px;
+
+    .account-grid-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-bottom: 1px solid #E0E0E0;
+
+        .account-header {
+            height: 38px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        &> div {
+            flex-basis: 50%;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        &> div:hover {
+            background-color: #f5f5f5;
+        }
+
+        .active-sort {
+            background-color: #f5f5f5;
+
+            .sort-icon {
+                color: #1f87e5;
+                font-weight: bold;
+            }
+        }
+
+    }
+
+    .account-grid-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px;
+        border-bottom: 1px solid #E0E0E0;
+
+        .align-center {
+            display: flex;
+            align-items: center;
+
+            .account-name {
+                color: #1E88E5;
+            }
+        }
+    }
+
+    .align-end {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .text-brown {
+            color: #795548;
+        }
+        .balance  {
+            font-size: 20px;
+            margin: 4px 0;
+        }
+        
+        .loss {
+            color: #F44336;
+            font-weight: 600;
+         }
+         
+         .profit {
+             color: #388E3C;
+             font-weight: 600;
+         }
+         
+         .no-profit-no-loss {
+             color: #757575;
+             font-weight: 600;
+         }
+    }
+
+    .load-more {
+        cursor: pointer;
+        padding: 16px;
+        text-align: center;
+        font-size: 20px;
+        color: #1f87e5;
+    }
+    
+    .m-0 {
+        margin: 0;
+    }
+}
+

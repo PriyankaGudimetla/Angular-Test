@@ -1,0 +1,23 @@
+<div class="account-grid">
+    <div class="account-grid-header">
+        <div class="account-header" [ngClass]="{'active-sort': sortProp == 'accountNo'}" (click)="onSort('accountNo')">
+            <p class="m-0">Account <span class="sort-icon" *ngIf="sortProp == 'accountNo' && sortType == 'asc'">^</span> <span class="sort-icon" *ngIf="sortProp == 'accountNo' && sortType == 'desc'">v</span></p>
+        </div>
+        <div class="align-end" [ngClass]="{'active-sort': sortProp == 'availableCash'}"  (click)="onSort('availableCash')">
+            <p class="m-0"> <span class="sort-icon" *ngIf="sortProp == 'availableCash' && sortType == 'asc'">^</span> <span class="sort-icon" *ngIf="sortProp == 'availableCash' && sortType == 'desc'">v</span> Available Cash</p>
+            <p class="m-0 text-brown">Today's Change</p>
+        </div>
+    </div>
+    <div *ngFor="let account of filteredAccountList" class="account-grid-row">
+        <div class="align-center">
+            <h3 class="m-0 account-name">{{account.accountName}} - {{account.accountNo}}</h3>
+        </div>
+        <div class="align-end">
+            <p class="m-0 balance">${{account.availableCash}}</p>
+            <p class="m-0" [ngClass]="{'no-profit-no-loss': account.todaysChangePercentage == 0, 'loss': account.todaysChangePercentage < 0, 'profit': account.todaysChangePercentage > 0 }">{{account.todaysChangePercentage}}% / ${{account.todaysChangeCash}}</p>
+        </div>
+    </div>
+    <div *ngIf="showMore" class="load-more" (click)="loadMoreData()">
+        Load more
+    </div>
+</div>
